@@ -1,13 +1,6 @@
 use std::io;
 
 fn main() {
-    struct Test {
-        x: i32,
-        y: bool,
-    }
-    let t = Test { x: 1, y: true };
-    println!("{}", t.x);
-    println!("{}", t.y);
     let mut player = true;
     let mut board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     loop {
@@ -93,11 +86,19 @@ fn update_board(number: usize, board: &mut [u32; 9], player: &mut bool) {
             *player = true;
         }
         println!("******************************************");
-        println!("{}-{}-{}", board[0], board[1], board[2]);
-        println!("{}-{}-{}", board[3], board[4], board[5]);
-        println!("{}-{}-{}", board[6], board[7], board[8]);
+        println!(
+            "\n {}-{}-{} \n {}-{}-{} \n {}-{}-{} \n",
+            board[0],
+            board[1],
+            board[2],
+            board[3],
+            board[4],
+            board[5],
+            board[6],
+            board[7],
+            board[8]
+        );
         println!("******************************************");
-        println!("\n");
     } else {
         println!("already picked, pick a valid number");
         println!("\n");
